@@ -39,10 +39,12 @@ async function searchImages() {
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
+        hideLoadMoreButton();
       } else {
         Notiflix.Notify.info(
           "We're sorry, but you've reached the end of search results."
         );
+        hideLoadMoreButton();
       }
     } else {
       renderImages(response.data.hits);
